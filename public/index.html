@@ -13,16 +13,16 @@
 <body>
 	<div class="perfect-dropdown">
 		<button class="perfect-dropdown-toggle" type="button">
-			Perfect Dropdown button
+			Perfect Dropdown
 		</button>
-		<ul class="perfect-dropdown-menu show">
+		<ul class="perfect-dropdown-menu">
 			<li class="perfect-dropdown-item">
 				<a class="perfect-dropdown-link" href="#">Action</a>
 			</li>
 			<li class="perfect-dropdown-item">
 				<a class="perfect-dropdown-link" href="#">Another action</a>
 			</li>
-			<li class="perfect-dropdown-item perfect-dropdown-sub-item">
+			<li class="perfect-dropdown-item">
 				<a class="perfect-dropdown-link" href="#">Something else here</a>
 				<ul class="perfect-dropdown-menu">
 					<li class="perfect-dropdown-item">
@@ -31,7 +31,7 @@
 					<li class="perfect-dropdown-item">
 						<a class="perfect-dropdown-link" href="#">Another action</a>
 					</li>
-					<li class="perfect-dropdown-item perfect-dropdown-sub-item">
+					<li class="perfect-dropdown-item">
 						<a class="perfect-dropdown-link" href="#">Something else here</a>
 						<ul class="perfect-dropdown-menu">
 							<li class="perfect-dropdown-item">
@@ -40,7 +40,7 @@
 							<li class="perfect-dropdown-item">
 								<a class="perfect-dropdown-link" href="#">Another action</a>
 							</li>
-							<li class="perfect-dropdown-item perfect-dropdown-sub-item">
+							<li class="perfect-dropdown-item">
 								<a class="perfect-dropdown-link" href="#">Something else here</a>
 								<ul class="perfect-dropdown-menu">
 									<li class="perfect-dropdown-item">
@@ -60,9 +60,13 @@
 			</li>
 		</ul>
 	</div>
+	<!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script> -->
 	<script src="perfect-dropdown.js"></script>
 	<script type="text/javascript">
-		new PerfectDropdown('.perfect-dropdown');
+		new PerfectDropdown({
+			parent: '.perfect-dropdown',
+			element: '.perfect-dropdown',
+		});
 	</script>
 </body>
 

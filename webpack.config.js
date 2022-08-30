@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -17,8 +18,11 @@ module.exports = {
 	},
 	mode: isProduction ? 'production' : 'development',
 	entry: ['./src/index.css', './src/index.ts'],
+	externals: {
+		jquery: 'jQuery',
+	},
 	output: {
-		library: ['ISpreadSheet'],
+		library: 'PerfectDropdown',
 		libraryTarget: 'umd',
 		libraryExport: 'default',
 		filename: `${FILENAME}.js`,
@@ -74,6 +78,10 @@ module.exports = {
 		],
 	},
 	plugins: [
+		new webpack.ProvidePlugin({
+			$: 'jquery',
+			jQuery: 'jquery',
+		}),
 		new HtmlWebpackPlugin({
 			template: 'public/index.html',
 			...(isProduction
